@@ -38,18 +38,15 @@ export default function SendMessageScreen() {
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.header}>
-        <Text style={styles.title}>Send a Message</Text>
-        <Text style={styles.subtitle}>
-          Reach out to fellow adventurers or ask for help on your next quest!
-        </Text>
+        <Text style={styles.title}>Envoyer un message</Text>
       </View>
 
       <View style={styles.form}>
         {/* Sujet du message */}
-        <Text style={styles.label}>Subject</Text>
+        <Text style={styles.label}>Sujet</Text>
         <TextInput
           style={styles.input}
-          placeholder="What's this about?"
+          placeholder="Objet du message"
           value={subject}
           onChangeText={setSubject}
         />
@@ -58,7 +55,7 @@ export default function SendMessageScreen() {
         <Text style={styles.label}>Message</Text>
         <TextInput
           style={[styles.input, styles.textArea]}
-          placeholder="Write your message here..."
+          placeholder="Ecrire un message ici..."
           value={message}
           onChangeText={setMessage}
           multiline={true}
@@ -72,7 +69,7 @@ export default function SendMessageScreen() {
           disabled={loading}
         >
           <Text style={styles.sendButtonText}>
-            {loading ? 'Sending...' : 'Send Message'}
+            {loading ? 'Envoie...' : 'Envoyer le message'}
           </Text>
         </TouchableOpacity>
       </View>
@@ -84,6 +81,7 @@ const styles = StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
     backgroundColor: '#F9D342',
+    justifyContent: 'center',
     padding: 16,
   },
   header: {

@@ -1,4 +1,4 @@
-import { StyleSheet, ScrollView, View, Text, useWindowDimensions } from 'react-native';
+import { StyleSheet, ScrollView, View, Text, useWindowDimensions, Image } from 'react-native';
 
 export default function ProfileScreen() {
   const { width } = useWindowDimensions();
@@ -10,9 +10,21 @@ export default function ProfileScreen() {
       {/* Header section */}
       <View style={styles.header}>
         <View style={styles.avatarPlaceholder}>
-          <Text style={styles.avatarInitials}>CE</Text> {/* Initiales à la place de l'image */}
+          {/* Si vous utilisez l'image, pas besoin des initiales ici */}
+          <Image 
+            source={require('@/assets/images/pirate-comique.jpg')} 
+            style={styles.avatarImage}
+          />
         </View>
         <Text style={styles.username}>Captain Explorer</Text> {/* Nom d'utilisateur */}
+      </View>
+
+      {/* Bio section */}
+      <View style={styles.bioContainer}>
+        <Text style={styles.sectionTitle}>Description</Text>
+        <Text style={styles.bioText}>
+          Création d'une application de chasse au trésor. Le but est de créer une application et trouver le trésor 
+        </Text>
       </View>
 
       {/* User stats */}
@@ -34,14 +46,7 @@ export default function ProfileScreen() {
         </View>
       </View>
 
-      {/* Bio section */}
-      <View style={styles.bioContainer}>
-        <Text style={styles.sectionTitle}>About Me</Text>
-        <Text style={styles.bioText}>
-          An adventurer at heart, I roam the world in search of hidden treasures. From mysterious jungles to ancient ruins, no challenge is too great!
-        </Text>
-      </View>
-
+      
       {/* Rewards / Achievements */}
       <View style={styles.rewardsContainer}>
         <Text style={styles.sectionTitle}>Achievements</Text>
@@ -80,9 +85,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 10,
   },
-  avatarInitials: {
-    color: '#FFF6E0', 
-    fontSize: 36,
+  avatarImage: {
+    height: 100,
+    width: 100,
+    borderRadius: 50, // Pour rendre l'image circulaire
   },
   username: {
     fontSize: 24,
