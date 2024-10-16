@@ -3,7 +3,6 @@ import { StyleSheet, ScrollView, View, Text, useWindowDimensions } from 'react-n
 export default function ProfileScreen() {
   const { width } = useWindowDimensions();
 
-  // Si l'écran fait moins de 600 pixels de large (typiquement un téléphone), on met les éléments en colonne
   const isSmallScreen = width < 600;
 
   return (
@@ -64,8 +63,8 @@ export default function ProfileScreen() {
 
 const styles = StyleSheet.create({
   scrollContainer: {
-    flexGrow: 1, // Assure que le ScrollView occupe tout l'espace disponible
-    backgroundColor: '#F9D342', // Fond jaune sable pour couvrir toute la page
+    flexGrow: 1,
+    backgroundColor: '#F9D342', 
     padding: 16,
   },
   header: {
@@ -75,32 +74,32 @@ const styles = StyleSheet.create({
   avatarPlaceholder: {
     height: 100,
     width: 100,
-    backgroundColor: '#6B4226', // Brun boisé
+    backgroundColor: '#6B4226', 
     borderRadius: 50,
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 10,
   },
   avatarInitials: {
-    color: '#FFF6E0', // Beige clair pour contraster avec le fond brun
+    color: '#FFF6E0', 
     fontSize: 36,
   },
   username: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#2D2D2D', // Noir/gris foncé pour le contraste
+    color: '#2D2D2D', 
   },
   statsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     padding: 16,
-    backgroundColor: '#FFF6E0', // Beige pour le contraste
+    backgroundColor: '#FFF6E0', 
     borderRadius: 10,
     marginBottom: 20,
   },
   statItem: {
     alignItems: 'center',
-    flex: 1, // Les éléments vont maintenant remplir l'espace disponible
+    flex: 1, 
   },
   statIcon: {
     height: 40,
@@ -123,7 +122,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
-    color: '#2D2D2D', // Gris foncé pour bien ressortir
+    color: '#2D2D2D', 
   },
   bioText: {
     fontSize: 14,
@@ -136,7 +135,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   achievementRow: {
-    flexDirection: 'column', // Les éléments seront empilés
+    flexDirection: 'column', 
     justifyContent: 'space-between',
   },
   achievementItem: {
@@ -144,10 +143,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFD700', // Couleur par défaut pour la médaille
+    backgroundColor: '#FFD700', 
     marginBottom: 10,
-    flex: 1, // Remplit l'espace horizontal
-    width: '100%', // Occupe toute la largeur de l'écran
+    flex: 1, 
+    width: '100%', 
   },
   achievementText: {
     fontSize: 14,
