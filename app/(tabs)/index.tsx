@@ -1,4 +1,5 @@
-import { StyleSheet, ScrollView, View, Text, useWindowDimensions, Image } from 'react-native';
+import React from 'react';
+import { StyleSheet, ScrollView, View, Text, useWindowDimensions, Image, StatusBar, SafeAreaView } from 'react-native';
 
 export default function ProfileScreen() {
   const { width } = useWindowDimensions();
@@ -6,60 +7,68 @@ export default function ProfileScreen() {
   const isSmallScreen = width < 600;
 
   return (
-    <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <View style={styles.header}>
-        <View style={styles.avatarPlaceholder}>
-          <Text style={styles.avatarInitials}>CE</Text>
-        </View>
-        <Text style={styles.username}>Captain Explorer</Text>
-      </View>
-
-      <View style={[styles.statsContainer, isSmallScreen ? styles.column : styles.row]}>
-        <View style={styles.statItem}>
-          <View style={[styles.statIcon, { backgroundColor: '#C89B3C' }]} />
-          <Text style={styles.statLabel}>Gold Coins</Text>
-          <Text>154</Text> 
-        </View>
-        <View style={styles.statItem}>
-          <View style={[styles.statIcon, { backgroundColor: '#3C6E71' }]} />
-          <Text style={styles.statLabel}>Quests Completed</Text>
-          <Text>12</Text>
-        </View>
-        <View style={styles.statItem}>
-          <View style={[styles.statIcon, { backgroundColor: '#6B4226' }]} /> 
-          <Text style={styles.statLabel}>Treasure Found</Text>
-          <Text>5</Text>
-        </View>
-      </View>
-
-     
-      <View style={styles.bioContainer}>
-        <Text style={styles.sectionTitle}>About Me</Text>
-        <Text style={styles.bioText}>
-          An adventurer at heart, I roam the world in search of hidden treasures. From mysterious jungles to ancient ruins, no challenge is too great!
-        </Text>
-      </View>
-
-      
-      <View style={styles.rewardsContainer}>
-        <Text style={styles.sectionTitle}>Achievements</Text>
-        <View style={styles.achievementRow}>
-          <View style={[styles.achievementItem, { backgroundColor: '#FFD700' }]}> 
-            <Text style={styles.achievementText}>Explorer Badge</Text>
+    <SafeAreaView style={styles.safeArea}>
+      <StatusBar barStyle="dark-content" backgroundColor="#F9D342" /> 
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <View style={styles.header}>
+          <View>
+            <Image 
+              source={require('@/assets/images/pirate-comique.jpg')} 
+              style={styles.avatarImage}
+            />
           </View>
-          <View style={[styles.achievementItem, { backgroundColor: '#8A4B08' }]}>
-            <Text style={styles.achievementText}>Key Holder</Text>
+          <Text style={styles.username}>Captain Explorer</Text> 
+        </View>
+
+        <View style={styles.bioContainer}>
+          <Text style={styles.sectionTitle}>Description</Text>
+          <Text style={styles.bioText}>
+            Création d'une application chasse au trésor. Les fonctionnalités présentes doivent être l'envoi de messages et l'envoi de photos.
+          </Text>
+        </View>
+
+        <View style={[styles.statsContainer, isSmallScreen ? styles.column : styles.row]}>
+          <View style={styles.statItem}>
+            <View style={[styles.statIcon, { backgroundColor: '#C89B3C' }]} /> 
+            <Text style={styles.statLabel}>Gold Coins</Text>
+            <Text>154</Text> 
           </View>
-          <View style={[styles.achievementItem, { backgroundColor: '#C4A484' }]}>
-            <Text style={styles.achievementText}>Map Reader</Text>
+          <View style={styles.statItem}>
+            <View style={[styles.statIcon, { backgroundColor: '#3C6E71' }]} /> 
+            <Text style={styles.statLabel}>Quests Completed</Text>
+            <Text>12</Text> 
+          </View>
+          <View style={styles.statItem}>
+            <View style={[styles.statIcon, { backgroundColor: '#6B4226' }]} />
+            <Text style={styles.statLabel}>Treasure Found</Text>
+            <Text>5</Text> 
           </View>
         </View>
-      </View>
-    </ScrollView>
+
+        <View style={styles.rewardsContainer}>
+          <Text style={styles.sectionTitle}>Achievements</Text>
+          <View style={styles.achievementRow}>
+            <View style={[styles.achievementItem, { backgroundColor: '#FFD700' }]}> 
+              <Text style={styles.achievementText}>Explorer Badge</Text>
+            </View>
+            <View style={[styles.achievementItem, { backgroundColor: '#8A4B08' }]}>
+              <Text style={styles.achievementText}>Key Holder</Text>
+            </View>
+            <View style={[styles.achievementItem, { backgroundColor: '#C4A484' }]}> 
+              <Text style={styles.achievementText}>Map Reader</Text>
+            </View>
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#F9D342', 
+  },
   scrollContainer: {
     flexGrow: 1,
     backgroundColor: '#F9D342', 
@@ -81,7 +90,7 @@ const styles = StyleSheet.create({
   avatarImage: {
     height: 100,
     width: 100,
-    borderRadius: 50, // Pour rendre l'image circulaire
+    borderRadius: 50,
   },
   username: {
     fontSize: 24,

@@ -16,16 +16,18 @@
       "supportsTablet": true,
       "infoPlist": {
         "NSCameraUsageDescription": "This app uses the camera to take photos for the treasure hunt."
-      }
+      },
+      "bundleIdentifier": "com.alexepsi.ChasseExpo"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff",
         "permissions": [
-        "CAMERA"
-      ]
-      }
+          "CAMERA"
+        ]
+      },
+      "package": "com.alexepsi.ChasseExpo"
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +39,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5a3ccdfa-547c-4334-93c4-32f5f74cdfbb"
+      }
     }
   }
 }
