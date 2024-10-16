@@ -8,34 +8,32 @@ export default function ProfileScreen() {
 
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
-      {/* Header section */}
       <View style={styles.header}>
         <View style={styles.avatarPlaceholder}>
-          <Text style={styles.avatarInitials}>CE</Text> {/* Initiales à la place de l'image */}
+          <Text style={styles.avatarInitials}>CE</Text>
         </View>
-        <Text style={styles.username}>Captain Explorer</Text> {/* Nom d'utilisateur */}
+        <Text style={styles.username}>Captain Explorer</Text>
       </View>
 
-      {/* User stats */}
       <View style={[styles.statsContainer, isSmallScreen ? styles.column : styles.row]}>
         <View style={styles.statItem}>
-          <View style={[styles.statIcon, { backgroundColor: '#C89B3C' }]} /> {/* Couleur or */}
+          <View style={[styles.statIcon, { backgroundColor: '#C89B3C' }]} />
           <Text style={styles.statLabel}>Gold Coins</Text>
-          <Text>154</Text> {/* Nombre */}
+          <Text>154</Text> 
         </View>
         <View style={styles.statItem}>
-          <View style={[styles.statIcon, { backgroundColor: '#3C6E71' }]} /> {/* Couleur boussole */}
+          <View style={[styles.statIcon, { backgroundColor: '#3C6E71' }]} />
           <Text style={styles.statLabel}>Quests Completed</Text>
-          <Text>12</Text> {/* Nombre */}
+          <Text>12</Text>
         </View>
         <View style={styles.statItem}>
-          <View style={[styles.statIcon, { backgroundColor: '#6B4226' }]} /> {/* Couleur bois */}
+          <View style={[styles.statIcon, { backgroundColor: '#6B4226' }]} /> 
           <Text style={styles.statLabel}>Treasure Found</Text>
-          <Text>5</Text> {/* Nombre */}
+          <Text>5</Text>
         </View>
       </View>
 
-      {/* Bio section */}
+     
       <View style={styles.bioContainer}>
         <Text style={styles.sectionTitle}>About Me</Text>
         <Text style={styles.bioText}>
@@ -43,17 +41,17 @@ export default function ProfileScreen() {
         </Text>
       </View>
 
-      {/* Rewards / Achievements */}
+      
       <View style={styles.rewardsContainer}>
         <Text style={styles.sectionTitle}>Achievements</Text>
         <View style={styles.achievementRow}>
-          <View style={[styles.achievementItem, { backgroundColor: '#FFD700' }]}> {/* Or pour médaille */}
+          <View style={[styles.achievementItem, { backgroundColor: '#FFD700' }]}> 
             <Text style={styles.achievementText}>Explorer Badge</Text>
           </View>
-          <View style={[styles.achievementItem, { backgroundColor: '#8A4B08' }]}> {/* Marron pour clé */}
+          <View style={[styles.achievementItem, { backgroundColor: '#8A4B08' }]}>
             <Text style={styles.achievementText}>Key Holder</Text>
           </View>
-          <View style={[styles.achievementItem, { backgroundColor: '#C4A484' }]}> {/* Sable pour parchemin */}
+          <View style={[styles.achievementItem, { backgroundColor: '#C4A484' }]}>
             <Text style={styles.achievementText}>Map Reader</Text>
           </View>
         </View>
